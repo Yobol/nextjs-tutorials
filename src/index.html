@@ -6,11 +6,24 @@
         <script src="./js/babel.min.js"></script>
         <script type="text/jsx">
             const app = document.getElementById("app");
-            const root = ReactDOM.createRoot(app);
 
-            // Browser don't understand JSX out of the box, so you'll need a JavaScript compiler,
-            // such as Babel, to transform your JSX code into regular JavaScript.
-            root.render(<h1>Develop. Preview. Ship.</h1>);
+            function Header() {
+                return (<h1>Develop. Preview. Ship.</h1>);
+            }
+
+            function HomePage() {
+                return (
+                    <div>
+                        {/* Nesting the Header component. */}
+                        <Header />
+                    </div>
+                )
+            }
+
+            // React components should be capitalized to distinguish them from plain HTML and JavaScript.
+            // Using React components the same way you'd use regular HTML tags.
+            const root = ReactDOM.createRoot(app);
+            root.render(<HomePage />);
         </script>
     </body>
 </html>
