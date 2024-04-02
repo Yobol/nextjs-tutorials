@@ -7,15 +7,17 @@
         <script type="text/jsx">
             const app = document.getElementById("app");
 
-            function Header() {
-                return (<h1>Develop. Preview. Ship.</h1>);
+            // Since props is an object, we can use object destructuring to
+            // explicitly name the values of props inside function parameters. 
+            function Header({ title }) {
+                // The use the title prop, add curly braces {}.
+                return <h1>{ title }</h1>;
             }
 
             function HomePage() {
                 return (
                     <div>
-                        {/* Nesting the Header component. */}
-                        <Header />
+                        <Header title="React" />
                     </div>
                 )
             }
