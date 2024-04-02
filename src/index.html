@@ -9,13 +9,14 @@
  
             function Header(props) {
                 // The use the title prop, add curly braces {}.
-                return <h1>{`Cool ${props.title}`}</h1>;
+                return <h1>{`Cool ${props.title ? props.title : 'Default'}`}</h1>;
             }
 
             function HomePage() {
                 return (
                     <div>
                         <Header title="React" />
+                        <Header no-title="React" />
                     </div>
                 )
             }
